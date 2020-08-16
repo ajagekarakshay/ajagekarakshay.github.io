@@ -1,23 +1,6 @@
+Thanks for downloading this template!
 
-TITLE: 
-Author - 100% Fully Responsive One Page HTML5 Template
-
-AUTHOR:
-DESIGNED & DEVELOPED by FreeHTML5.co
-
-Website: http://freehtml5.co/
-Twitter: http://twitter.com/fh5co
-Facebook: http://facebook.com/fh5co
-
-
-CREDITS:
-
-jQuery
-http://jquery.com/
-
-Slick Slider
-http://kenwheeler.github.io/slick/
-
-Demo Images:
-http://unsplash.com
-
+Template Name: iPortfolio
+Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+Author: BootstrapMade.com
+License: https://bootstrapmade.com/license/
