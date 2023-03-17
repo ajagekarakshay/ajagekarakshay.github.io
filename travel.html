@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Portfolio Details - iPortfolio Bootstrap Template</title>
+  <title>Akshay - Travel blog</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -26,6 +26,29 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- leaflet map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+  integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+  crossorigin=""/>
+
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+  integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+  crossorigin=""></script>
+<!-- 
+  <style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		.leaflet-container {
+			height: 100%;
+			width: 600px;
+			max-width: 100%;
+			max-height: 100%;
+		}
+	</style>
+-->
 
 </head>
 
@@ -56,7 +79,7 @@
           <li><a href="index.html#resume"><i class="bx bx-file-blank"></i> <span>Publications</span></a></li>
           <li><a href="index.html#portfolio"><i class="bx bx-book-content"></i> Writing </a></li>
           <li><a href="index.html#travel"><i class="bx bx-world"></i> Travel blog </a></li>
-          <li><a href="index.html#interest"><i class="bx bx-cycling"></i> Other interests </a></li>
+          <!-- <li><a href="index.html#interest"><i class="bx bx-cycling"></i> Other interests </a></li> -->
 
         </ul>
       </nav><!-- .nav-menu -->
@@ -89,90 +112,9 @@
 
     <!-- <iframe src="assets/media/cv.pdf" width="100%" height="1000px"></iframe> -->
 
+    <div id="map" style="width: 100%; height: 450px;"></div>
+    <script src="assets/js/map.js"></script>
 
-
-
-    <div id="chartdiv"></div>
-
-
-    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/map.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-
-<!-- Chart code -->
-<script>
-  am5.ready(function() {
-  
-  // Create root element
-  // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-  var root = am5.Root.new("chartdiv");
-  
-  
-  // Set themes
-  // https://www.amcharts.com/docs/v5/concepts/themes/
-  root.setThemes([
-    am5themes_Animated.new(root)
-  ]);
-  
-  
-  // Create the map chart
-  // https://www.amcharts.com/docs/v5/charts/map-chart/
-  var chart = root.container.children.push(am5map.MapChart.new(root, {
-    panX: "rotateX",
-    panY: "translateY",
-    projection: am5map.geoNaturalEarth1()
-  }));
-  
-  
-  // Create main polygon series for countries
-  // https://www.amcharts.com/docs/v5/charts/map-chart/map-polygon-series/
-  var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
-    geoJSON: am5geodata_worldLow,
-    exclude: ["AQ"]
-  }));
-  
-  polygonSeries.mapPolygons.template.setAll({
-    tooltipText: "{name}",
-    toggleKey: "active",
-    interactive: true
-  });
-  
-  polygonSeries.mapPolygons.template.states.create("hover", {
-    fill: root.interfaceColors.get("primaryButtonHover")
-  });
-  
-  polygonSeries.mapPolygons.template.states.create("active", {
-    fill: root.interfaceColors.get("primaryButtonActive")
-  });
-  
-  // Set clicking on "water" to zoom out
-  chart.chartContainer.get("background").events.on("click", function() {
-    chart.goHome();
-  })
-  
-  // Add zoom control
-  // https://www.amcharts.com/docs/v5/charts/map-chart/map-pan-zoom/#Zoom_control
-  var zoomControl = chart.set("zoomControl", am5map.ZoomControl.new(root, {}));
-  var homeButton = zoomControl.children.moveValue(am5.Button.new(root, {
-    paddingTop: 10,
-    paddingBottom: 10,
-    icon:
-      am5.Graphics.new(root, {
-        svgPath: "M16,8 L14,8 L14,16 L10,16 L10,10 L6,10 L6,16 L2,16 L2,8 L0,8 L8,0 L16,8 Z M16,8",
-        fill: am5.color(0xffffff)
-      })
-  }), 0)
-  
-  homeButton.events.on("click", function() {
-    chart.goHome();
-  })
-  
-  // Make stuff animate on load
-  chart.appear(1000, 100);
-  
-  }); // end am5.ready()
-  </script>
 
   </main><!-- End #main -->
 
