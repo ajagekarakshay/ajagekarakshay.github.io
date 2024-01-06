@@ -588,7 +588,7 @@ section {
 }
 
 .portfolio .portfolio-wrap .portfolio-links a:hover {
-  background: rgba(168, 40, 80, 0.95);
+  background: rgba(20, 157, 221, 0.75);
   /* height: 200px; rgba(20, 157, 221, 0.95) */
 }
 
@@ -607,7 +607,7 @@ section {
 .portfolio .portfolio-wrap:hover .portfolio-links {
   opacity: 0.45;
   bottom: 0;
-  background: rgba(168, 40, 80, 0.95);
+  background: rgba(20, 157, 221, 0.75);
   height: 100%; 
 }
 
